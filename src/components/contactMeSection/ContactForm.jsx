@@ -4,6 +4,7 @@ import emailjs from "@emailjs/browser";
 const ContactForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState(""); // Added state for phone number
   const [message, setMessage] = useState("");
   const [success, setSuccess] = useState("");
   const handleName = (e) => {
@@ -16,16 +17,27 @@ const ContactForm = () => {
     setMessage(e.target.value);
   };
   const form = useRef();
+
+    // Function to get current date and time
+    const getCurrentDate = () => {
+      return new Date().toLocaleString();
+    };
+
   const sendEmail = (e) => {
     e.preventDefault();
+
+   // Set the hidden date input field's value
+   form.current.date.value = getCurrentDate();
+
     emailjs
-      .sendForm("service_ko3hmpt", "template_ahbmmqd", form.current, {
-        publicKey: "I6HAT5mUZH7WHabGE",
+      .sendForm("service_c1dbc5l", "template_6l4fego", form.current, {
+        publicKey: "7myiYDLoS4TsBTq1o",
       })
       .then(
         () => {
           setEmail("");
           setName("");
+          setPhone(""); // Reset phone field
           setMessage("");
           setSuccess("Message Sent Succesfully");
         },
@@ -57,6 +69,16 @@ const ContactForm = () => {
           value={email}
           onChange={handleEmail}
         />
+        <input
+          type="tel"
+          name="from_phone"
+          placeholder="Your Phone Number"
+          required
+          pattern="[0-9]{10}" // Ensures 10-digit phone number
+          className="h-12 rounded-lg bg-lightBrown px-2"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+        />
         <textarea
           type="text"
           name="message"
@@ -68,6 +90,10 @@ const ContactForm = () => {
           value={message}
           onChange={handleMessage}
         />
+
+              {/* Hidden input for the date */}
+              <input type="hidden" name="date" />
+
         <button
           type="submit"
           className="w-full rounded-lg border border-cyan text-white h-12 font-bold text-xl hover:bg-darkCyan bg-cyan transition-all duration-500"

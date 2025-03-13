@@ -1,47 +1,72 @@
 import SingleSkill from "./SingleSkill";
-import { FaHtml5 } from "react-icons/fa";
-import { FaCss3Alt } from "react-icons/fa";
-import { IoLogoJavascript } from "react-icons/io";
-import { SiTypescript } from "react-icons/si";
-import { FaReact } from "react-icons/fa";
-import { SiRedux } from "react-icons/si";
-import { SiNextdotjs } from "react-icons/si";
-import { RiTailwindCssFill } from "react-icons/ri";
+import { FaAws } from "react-icons/fa";
+import { FaDocker } from "react-icons/fa";
+import { SiKubernetes } from "react-icons/si";
+import { SiTerraform } from "react-icons/si";
+import { SiJenkins } from "react-icons/si";
+import { SiPrometheus } from "react-icons/si";
+import { SiGrafana } from "react-icons/si";
+import { SiAnsible } from "react-icons/si";
+import { SiGithubactions } from "react-icons/si";
+import { FaGithub } from "react-icons/fa";
+import { SiSonarqube } from "react-icons/si";
+import { SiNginx } from "react-icons/si";
+import { SiApache } from "react-icons/si";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../framerMotion/variants";
 
 const skills = [
   {
-    skill: "HTML",
-    icon: FaHtml5,
+    skill: "AWS",
+    icon: FaAws,
   },
   {
-    skill: "CSS",
-    icon: FaCss3Alt,
+    skill: "Docker",
+    icon: FaDocker,
   },
   {
-    skill: "JavaScript",
-    icon: IoLogoJavascript,
+    skill: "Kubernetes",
+    icon: SiKubernetes,
   },
   {
-    skill: "TypeScript",
-    icon: SiTypescript,
+    skill: "Terraform",
+    icon: SiTerraform,
   },
   {
-    skill: "ReactJS",
-    icon: FaReact,
+    skill: "CI/CD (Jenkins)",
+    icon: SiJenkins,
   },
   {
-    skill: "Redux",
-    icon: SiRedux,
+    skill: "Prometheus",
+    icon: SiPrometheus,
   },
   {
-    skill: "NextJS",
-    icon: SiNextdotjs,
+    skill: "Grafana",
+    icon: SiGrafana,
   },
   {
-    skill: "TailwindCSS",
-    icon: RiTailwindCssFill,
+    skill: "Ansible",
+    icon: SiAnsible,
+  },
+  {
+    skill: "GitHub Actions",
+    icon: SiGithubactions,
+  },
+  {
+    skill: "GitHub",
+    icon: FaGithub,
+  },
+  {
+    skill: "SonarQube",
+    icon: SiSonarqube,
+  },
+  {
+    skill: "Nginx",
+    icon: SiNginx,
+  },
+  {
+    skill: "Apache",
+    icon: SiApache,
   },
 ];
 
